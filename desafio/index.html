@@ -1,0 +1,114 @@
+<!doctype html><html lang="pt-br"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>SHERPA · Desafio (mockup v3)</title>
+<style>:root{color-scheme:light}
+:root{--deep:#0100FE;--mid:#001228;--tint:#EEF0FF;--bg:#F6F7FB;--line:#E8EAF2;--mut:#5E6478;--mut2:#9AA0B4;--ok:#138a43;--okbg:#E7F7ED}
+*{box-sizing:border-box;margin:0}body{background:var(--bg);color:var(--mid);font-family:Inter,ui-sans-serif,system-ui,-apple-system,"Segoe UI",sans-serif;font-size:14px}
+@keyframes lup{from{transform:translateY(14px);opacity:0}to{transform:none;opacity:1}}@keyframes wadot{50%{opacity:.35}}@keyframes lpop{from{transform:scale(.6);opacity:0}to{transform:scale(1);opacity:1}}@keyframes tick{from{transform:translateX(0)}to{transform:translateX(-50%)}}@keyframes shine{0%{background-position:-200% 0}100%{background-position:200% 0}}
+.band{background:linear-gradient(180deg,#001228,#070A7E 70%,#0C10C9);color:#fff;padding:18px 0 64px}
+.wrap{max-width:1100px;margin:0 auto;padding:0 26px}.nav{display:flex;justify-content:space-between;align-items:center;gap:10px;flex-wrap:wrap}
+.brand{font-weight:800;letter-spacing:.04em;display:flex;gap:10px;align-items:center}.brand i{width:30px;height:30px;border-radius:9px;background:#fff;color:var(--deep);display:flex;align-items:center;justify-content:center;font-style:normal;font-weight:900}
+.tabs{display:flex;gap:4px;background:rgba(255,255,255,.1);padding:4px;border-radius:12px}.tabs b{font-weight:500;font-size:13px;padding:7px 14px;border-radius:9px;color:rgba(255,255,255,.75)}.tabs b.on{background:#fff;color:var(--mid)}
+.hi{margin-top:20px;display:flex;align-items:flex-end;justify-content:space-between;gap:16px;flex-wrap:wrap}.hi h1{font-size:27px;font-weight:800;letter-spacing:-.02em}.hi small{opacity:.8}
+.clock{background:rgba(255,255,255,.12);border-radius:14px;padding:10px 16px;text-align:center}.clock b{font-size:22px;display:block}
+.ticker{margin-top:16px;overflow:hidden;white-space:nowrap;background:rgba(255,255,255,.08);border-radius:999px;padding:7px 0}.ticker div{display:inline-block;animation:tick 40s linear infinite}.ticker span{margin:0 26px;font-size:12.5px}
+main{max-width:1100px;margin:18px auto 40px;padding:0 26px}
+.me{display:grid;grid-template-columns:1.4fr 1fr;gap:14px}
+.k{background:#fff;border-radius:20px;padding:20px 22px;border:1px solid var(--line);box-shadow:0 10px 30px -16px rgba(0,18,40,.35);animation:lpop .55s cubic-bezier(.2,1.6,.4,1) both}
+.k.hero{background:linear-gradient(135deg,#001228,#0A0DA6);color:#fff;border:0}.k .t{font-size:11.5px;font-weight:800;letter-spacing:.06em;text-transform:uppercase;opacity:.75}.k .v{font-size:34px;font-weight:800;margin:8px 0 4px;letter-spacing:-.02em}.k .s{font-size:12.5px;opacity:.8;line-height:1.5}
+.prog{height:12px;background:rgba(255,255,255,.18);border-radius:99px;overflow:hidden;margin-top:12px}.k:not(.hero) .prog{background:#EEF0F5}.prog i{display:block;height:100%;border-radius:99px;background:linear-gradient(90deg,#22C55E,#86EFAC);transition:width 1.2s cubic-bezier(.2,.8,.2,1)}
+.pote{display:flex;align-items:center;gap:12px;background:var(--okbg);border:1px solid #BBF7D0;border-radius:16px;padding:12px 16px;margin-top:14px;font-size:13.5px;animation:lup .5s .2s both}
+.card{background:#fff;border:1px solid var(--line);border-radius:20px;padding:18px 20px;margin-top:14px;animation:lup .5s .25s both}.card h2{font-size:17px;margin-bottom:4px}.hint{color:var(--mut);font-size:12.5px}
+.rk{display:flex;align-items:center;gap:12px;padding:11px 12px;border-radius:14px;transition:transform .3s,box-shadow .3s;animation:lup .45s both}.rk:hover{transform:translateY(-2px);box-shadow:0 10px 26px -14px rgba(0,18,40,.3)}
+.rk.eu{background:linear-gradient(90deg,#EEF0FF,#fff 40%,#EEF0FF);background-size:200% 100%;animation:lup .45s both,shine 3s ease 2}
+.pos{width:30px;text-align:center;font-weight:800;color:var(--mut2)}.nm{flex:1;font-weight:700}.ga{color:var(--ok);font-weight:800;min-width:110px;text-align:right}.bo{min-width:80px;text-align:right;font-weight:800}
+.bar{flex:0 0 160px;height:8px;background:#F0F1F5;border-radius:99px;overflow:hidden}.bar i{display:block;height:100%;background:linear-gradient(90deg,#4B52FF,#22C55E);border-radius:99px}
+.medals{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-top:10px}.md{background:var(--tint);border-radius:16px;padding:14px 16px;display:flex;gap:12px;align-items:center}.md b{display:block}
+.how{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin-top:10px}.how div{background:var(--tint);border-radius:14px;padding:12px 14px;font-size:12.5px;line-height:1.5}.how b{display:block;margin-bottom:4px;color:var(--deep)}
+.sq{display:flex;gap:10px;align-items:center;padding:10px 12px;border:1px solid var(--line);border-radius:14px;margin-top:8px}
+.btn{border:1px solid var(--line);background:#fff;border-radius:10px;padding:6px 12px;font:inherit;font-size:12.5px;font-weight:700;cursor:pointer;color:var(--deep)}
+.ov{position:fixed;inset:0;background:rgba(0,18,40,.5);display:none;align-items:center;justify-content:center;padding:20px}.ov>div{background:#fff;border-radius:20px;padding:22px;max-width:520px;width:100%;animation:lpop .4s cubic-bezier(.2,1.6,.4,1)}
+.viewas{background:#FBF3DC;border-radius:12px;padding:8px 12px;font-size:12.5px;margin-top:10px;display:flex;gap:8px;align-items:center;color:#7a5a00}
+.live{display:inline-block;width:8px;height:8px;border-radius:50%;background:#22C55E;animation:wadot 2.4s infinite;margin-right:6px}
+.note{text-align:center;color:var(--mut2);font-size:11.5px;margin-top:20px}
+@media(max-width:860px){.me,.medals,.how{grid-template-columns:1fr}.bar{display:none}}
+</style></head><body>
+<div class="band"><div class="wrap">
+<div class="nav"><div class="brand"><i>S</i>SHERPA</div><div class="tabs"><b>☀️ Meu dia</b><b>Painel</b><b class="on">🏁 Desafio</b></div></div>
+<div class="hi"><div><small><span class="live"></span>SPRINT DE OUTUBRO · 16 a 31/10 · dia 8 de 16</small><h1>Bora fazer a LC crescer 🚀</h1><small>Cada venda acima do esperado vira bônus pra você.</small></div><div class="clock"><b>8 dias</b><small>pro fechamento · 01/11</small></div></div>
+<div class="ticker"><div id="tk"></div></div>
+</div></div>
+<section style="max-width:1100px;margin:22px auto 0;padding:0 26px">
+<div style="background:#fff;border:2px solid #0100FE;border-radius:20px;padding:22px 24px">
+<div style="font-size:11.5px;font-weight:800;letter-spacing:.06em;color:#0100FE">PROPOSTA · PARA O BRUNO</div>
+<h2 style="font-size:22px;margin:6px 0 10px">Desafio do Mês: como funciona, em 6 passos</h2>
+<ol style="margin-left:18px;line-height:1.7;font-size:14px">
+<li><b>Sprint:</b> começa 16/10 e fecha 01/11. Só conta o que acontecer nesse período. Depois vira mensal.</li>
+<li><b>Quem participa:</b> todo mundo do comercial, inclusive subs e Graziela.</li>
+<li><b>Esperado de cada um:</b> leads recebidos no sprint × valor médio por lead (metade a média da pessoa nos últimos 60 dias, metade a média do time). Assim quem já vende muito não é esmagado e quem vende pouco tem que subir.</li>
+<li><b>Vendeu a mais:</b> toda venda nova do sprint menos o esperado. Venda é venda e lead é lead, não importa quando chegou ou quando fecha. Venda acima de R$ 15 mil conta como R$ 15 mil.</li>
+<li><b>Bônus em degraus:</b> +R$ 5 mil = R$ 30 · +R$ 15 mil = R$ 80 · +R$ 30 mil = R$ 150 · +R$ 60 mil = R$ 300. Disciplina (resposta em 5 min + toques no dia certo) multiplica: ×1,2 ou ×0,8. Top 3 do sprint: R$ 300 / 200 / 100. Sherpa ganha 0,1% do que o squad trouxe a mais.</li>
+<li><b>Trava da empresa (só a gestão vê):</b> o total pago nunca passa de 30% da margem extra (margem LC 7%). Se o time não trouxer receita a mais, ninguém recebe. Com a margem de 7%, a LC fica com 70%+ do que ganhou a mais.</li>
+</ol>
+<h3 style="font-size:15px;margin:14px 0 6px">O que o vendedor vê (abaixo, simulado)</h3>
+<ul style="margin-left:18px;line-height:1.7;font-size:14px">
+<li>Quanto trouxe a mais pra LC e o bônus, sem margem nem trava.</li>
+<li>Quem está abaixo não aparece em vermelho pra ninguém: vê só "faltam R$ X pro 1º degrau".</li>
+<li>Ranking só com quem já está num degrau; destaque pra quem mais trouxe e pra quem mais cresceu.</li>
+<li>"Ver a conta" abre o cálculo e as vendas que contaram (transparência evita briga).</li>
+</ul>
+<p style="font-size:13px;color:#5E6478;margin-top:10px"><b>Use o seletor "ver como"</b> logo abaixo pra trocar de vendedor e ver a tela de quem está bem, quase lá ou abaixo. Números simulados para o dia 8 do sprint.</p>
+<p style="font-size:13px;color:#5E6478"><b>Pra decidir:</b> aprovar os degraus, a trava de 30% e a lista de squads (proposta da v1; "Gabriela Martins" não existe no SHERPA).</p>
+</div></section>
+<main style="margin-top:18px">
+<div class="viewas">👁 mockup: ver como <select id="who" onchange="draw()" style="border:1px solid #E9D9A6;border-radius:8px;padding:3px 6px;font:inherit"></select> (troque pra ver a tela de quem está acima ou abaixo do esperado)</div>
+<section class="me" id="me" style="margin-top:12px"></section>
+<div class="pote" id="pote"></div>
+<div class="card"><h2>🏅 Destaques do sprint</h2><div class="medals" id="md"></div></div>
+<div class="card"><div style="display:flex;justify-content:space-between;align-items:center;gap:8px;flex-wrap:wrap"><h2>🏆 Quem está no bônus</h2><span class="hint" id="nb"></span></div><div class="hint" style="margin-bottom:6px">parcial, atualiza a cada venda lançada</div><div id="rk"></div></div>
+<div class="card" style="border:2px solid var(--deep)"><h2>🧭 Squads</h2><div class="hint">quanto cada squad trouxe a mais e o bônus do Sherpa</div><div id="sq"></div></div>
+<div class="card"><h2>Como funciona</h2><div class="how">
+ <div><b>1 · Seu esperado</b>Leads que você recebeu no sprint × o valor médio por lead (metade sua média dos últimos 60 dias, metade a média do time).</div>
+ <div><b>2 · O que você trouxe a mais</b>Tudo que você vendeu no sprint menos o esperado. Qualquer venda conta, de qualquer lead.</div>
+ <div><b>3 · Seu bônus em degraus</b>+R$ 5 mil = R$ 30 · +R$ 15 mil = R$ 80 · +R$ 30 mil = R$ 150 · +R$ 60 mil = R$ 300. Respondendo rápido e fazendo os toques certos, o degrau vale 20% a mais.</div></div></div>
+<div class="note">mockup · números simulados do dia 8 do sprint · nomes reais só pra visualização</div>
+</main>
+<div class="ov" id="ov" onclick="if(event.target===this)this.style.display='none'"><div id="ovc"></div></div>
+<script>
+const D={"P": [{"n": "Jéssica Moreira", "leads": 121, "rpl": 195, "esp": 23584, "rec": 19717, "disc": 1.2, "vn": 7}, {"n": "Maria Júlia Teixeira", "leads": 71, "rpl": 293, "esp": 20773, "rec": 27445, "disc": 1.0, "vn": 9}, {"n": "Caroline Garcia", "leads": 71, "rpl": 284, "esp": 20176, "rec": 15232, "disc": 1.2, "vn": 5}, {"n": "Ana Paula Silveira", "leads": 30, "rpl": 161, "esp": 4816, "rec": 2985, "disc": 1.0, "vn": 1}, {"n": "Camila Pascholati", "leads": 124, "rpl": 176, "esp": 21835, "rec": 33144, "disc": 1.2, "vn": 11}, {"n": "Samirah Bueno", "leads": 49, "rpl": 478, "esp": 23406, "rec": 19238, "disc": 1.0, "vn": 6}, {"n": "Isabelle Padilha", "leads": 46, "rpl": 402, "esp": 18511, "rec": 17775, "disc": 1.2, "vn": 6}, {"n": "Sergyane Santos", "leads": 43, "rpl": 398, "esp": 17103, "rec": 24404, "disc": 1.0, "vn": 8}, {"n": "Yasmim Fernandes", "leads": 82, "rpl": 130, "esp": 10699, "rec": 8714, "disc": 1.2, "vn": 3}, {"n": "Felipe Novaes", "leads": 81, "rpl": 177, "esp": 14363, "rec": 20523, "disc": 1.0, "vn": 7}, {"n": "Fernanda Barbosa", "leads": 65, "rpl": 314, "esp": 20387, "rec": 28550, "disc": 1.2, "vn": 10}, {"n": "Mariany Taionato", "leads": 61, "rpl": 293, "esp": 17880, "rec": 13675, "disc": 1.0, "vn": 5}, {"n": "Marcela Padon", "leads": 53, "rpl": 274, "esp": 14529, "rec": 17827, "disc": 0.8, "vn": 6}, {"n": "Sub · Aline Felix", "leads": 37, "rpl": 129, "esp": 4778, "rec": 7459, "disc": 1.0, "vn": 2}, {"n": "Manuela Santos", "leads": 80, "rpl": 232, "esp": 18535, "rec": 12728, "disc": 1.0, "vn": 4}, {"n": "Flávia Soares", "leads": 82, "rpl": 169, "esp": 13878, "rec": 13010, "disc": 1.0, "vn": 4}, {"n": "Giovanna Braga", "leads": 48, "rpl": 265, "esp": 12726, "rec": 14074, "disc": 1.2, "vn": 5}, {"n": "Mariana Jofre", "leads": 65, "rpl": 246, "esp": 15960, "rec": 13523, "disc": 1.0, "vn": 5}, {"n": "Marcelo Mota", "leads": 90, "rpl": 252, "esp": 22711, "rec": 15656, "disc": 1.0, "vn": 5}, {"n": "Thaisa Neves", "leads": 53, "rpl": 232, "esp": 12272, "rec": 17677, "disc": 1.2, "vn": 6}, {"n": "Isabela Chiquito", "leads": 62, "rpl": 355, "esp": 21991, "rec": 33182, "disc": 1.0, "vn": 11}, {"n": "Thais Zerbieti", "leads": 58, "rpl": 324, "esp": 18784, "rec": 24512, "disc": 1.0, "vn": 8}, {"n": "Graziela Zanon", "leads": 29, "rpl": 258, "esp": 7491, "rec": 10847, "disc": 1.0, "vn": 4}, {"n": "Sub · Lucas Santos", "leads": 25, "rpl": 129, "esp": 3229, "rec": 2567, "disc": 1.0, "vn": 1}, {"n": "Maria Eduarda Silva", "leads": 64, "rpl": 325, "esp": 20798, "rec": 24935, "disc": 1.0, "vn": 8}, {"n": "Patrícia Cavalcante", "leads": 46, "rpl": 298, "esp": 13699, "rec": 14403, "disc": 1.2, "vn": 5}, {"n": "Gabriela Oliveira", "leads": 54, "rpl": 288, "esp": 15552, "rec": 14076, "disc": 1.2, "vn": 5}], "team": 258}, P=D.P, TEAM=D.team;
+const SQ={"Samirah":["Jéssica"],"Patrícia":["Maria Eduarda"],"Sergyane":["Camila"],"Giovanna":["Marcela"],"Isabelle":["Ana Paula","Mariany"],"Caroline":["Marcelo","Maria Júlia","Manuela"],"Isabela":["Flávia","Felipe","Yasmim"]};
+const brl=v=>'R$ '+Math.abs(Math.round(v)).toLocaleString('pt-BR');
+const first=n=>n.replace('Sub · ','').split(' ')[0];
+const DEG=[[5000,30],[15000,80],[30000,150],[60000,300]];
+const degrau=g=>{let b=0;for(const [l,v] of DEG) if(g>=l) b=v; return b;};
+const prox=g=>DEG.find(([l])=>g<l);
+P.forEach(p=>{p.g=p.rec-p.esp;p.cres=p.esp?p.g/p.esp:0;p.base=degrau(p.g);p.b=Math.round(p.base*p.disc);});
+P.sort((a,b)=>b.g-a.g);
+const DEST=[300,200,100]; P.forEach((p,i)=>p.dest=(i<3&&p.base>0)?DEST[i]:0);
+const ganhoTime=P.reduce((a,p)=>a+p.g,0), limite=Math.max(0,ganhoTime*0.07*0.30);
+const sh=Object.entries(SQ).map(([m,af])=>{const g=P.filter(p=>af.includes(first(p.n))).reduce((a,p)=>a+Math.max(0,p.g),0);return {m,af,g,b:g*0.001};});
+const bruto=P.reduce((a,p)=>a+p.b+p.dest,0)+sh.reduce((a,s)=>a+s.b,0); const fator=bruto>limite?limite/bruto:1;
+const bonus=p=>Math.round((p.b+p.dest)*fator);
+const sel=document.getElementById('who'); sel.innerHTML=P.slice().sort((a,b)=>a.n.localeCompare(b.n)).map(p=>`<option ${p.n.startsWith('Patrícia')?'selected':''}>${p.n}</option>`).join('');
+document.getElementById('tk').innerHTML=(()=>{const s=P.filter(p=>p.base>0).slice(0,8).map(p=>`<span>🔥 <b>${first(p.n)}</b> subiu pro degrau de ${brl(p.base)}</span>`).concat([`<span>💙 o time já trouxe <b>${brl(ganhoTime)}</b> a mais pra LC</span>`]).join('');return s+s;})();
+function draw(){
+ const me=P.find(p=>p.n===sel.value); const pos=P.indexOf(me)+1; const acima=me.g>0;
+ const falta=Math.max(0,-me.g), vendas=Math.max(1,Math.ceil(falta/3000));
+ const prog=acima?100:Math.max(4,me.rec/me.esp*100); const nx=prox(me.g);
+ document.getElementById('me').innerHTML=acima
+ ?`<div class="k hero"><div class="t">Você trouxe a mais pra LC</div><div class="v">+${brl(me.g)}</div><div class="s">vendeu ${brl(me.rec)} · seu esperado era ${brl(me.esp)} <button class="btn" style="margin-left:6px;padding:3px 9px;font-size:11.5px" onclick="conta()">ver a conta</button></div><div class="prog"><i style="width:${nx?Math.max(4,(me.g-(DEG[DEG.indexOf(nx)-1]||[0])[0])/(nx[0]-(DEG[DEG.indexOf(nx)-1]||[0])[0])*100):100}%"></i></div><div class="s" style="margin-top:6px">${nx?'🎯 faltam <b>'+brl(nx[0]-me.g)+'</b> pro degrau de <b>'+brl(nx[1])+'</b>':'🏔 você chegou no degrau máximo!'}</div></div>
+   <div class="k"><div class="t">Seu bônus até agora</div><div class="v" style="color:${bonus(me)?'var(--ok)':'var(--deep)'}">${bonus(me)?brl(bonus(me)):'quase lá'}</div><div class="s">${bonus(me)?'degrau '+brl(me.base)+(me.disc!==1?' × disciplina '+String(me.disc).replace('.',','):'')+(me.dest?' + destaque top 3':''):'falta '+brl(5000-me.g)+' pro 1º degrau (R$ 30)'}<br>${pos}º lugar${me.disc>1?'<br>⚡ disciplina em dia: bônus turbinado':me.disc<1?'<br>⏱ responda em 5 min e faça os toques certos pra turbinar':''}</div></div>`
+ :`<div class="k hero"><div class="t">Falta pouco pra entrar no bônus</div><div class="v">${brl(falta)}</div><div class="s">≈ ${vendas} venda${vendas>1?'s':''} · você vendeu ${brl(me.rec)} de ${brl(me.esp)} esperados <button class="btn" style="margin-left:6px;padding:3px 9px;font-size:11.5px" onclick="conta()">ver a conta</button></div><div class="prog"><i style="width:${prog}%"></i></div><div class="s" style="margin-top:6px">${prog>80?'🔥 você está a um passo':'🎯 foco no ⚡ Faça hoje: responder rápido e tocar no dia certo é o que mais vira venda'}</div></div>
+   <div class="k"><div class="t">Quando você passar o esperado</div><div class="v" style="color:var(--deep)">bônus liberado</div><div class="s">degraus: +R$ 5 mil = R$ 30 · +R$ 15 mil = R$ 80 · +R$ 30 mil = R$ 150 · +R$ 60 mil = R$ 300<br>8 dias pra virar o jogo</div></div>`;
+ document.getElementById('pote').innerHTML=ganhoTime>0?`<span style="font-size:22px">🔓</span><div><b>Pote do time aberto.</b> O time já trouxe ${brl(ganhoTime)} a mais pra LC neste sprint: todo bônus mostrado aqui está garantido.</div>`:`<span style="font-size:22px">🔒</span><div><b>Pote do time fechado por enquanto.</b> Quando o time passar do esperado, os bônus liberam.</div>`;
+ const cresc=P.filter(p=>p.base>0).slice().sort((a,b)=>b.cres-a.cres)[0];
+ document.getElementById('md').innerHTML=`<div class="md"><span style="font-size:28px">🥇</span><div><b>${P[0].n}</b><span class="hint">quem mais trouxe a mais: +${brl(P[0].g)}</span></div></div><div class="md"><span style="font-size:28px">🚀</span><div><b>${cresc.n}</b><span class="hint">quem mais cresceu: ${Math.round(cresc.cres*100)}% acima do esperado</span></div></div>`;
+ const L=P.filter(p=>p.base>0), mx=L[0]?L[0].g:1;
+ document.getElementById('nb').textContent=L.length+' de '+P.length+' no bônus';
+ document.getElementById('rk').innerHTML=L.map((p,i)=>`<div class="rk${p===me?' eu':''}" style="animation-delay:${i*35}ms"><span class="pos">${i===0?'🥇':i===1?'🥈':i===2?'🥉':i+1}</span><span class="nm">${p.n}${p===me?' <span class="hint">(você)</span>':''}</span><span class="bar"><i style="width:${p.g/mx*100}%"></i></span><span class="ga">+${brl(p.g)}</span><span class="bo" style="color:var(--ok)">${brl(bonus(p))}</span></div>`).join('')+((me.base>0)?'':`<div class="rk eu" style="opacity:.85"><span class="pos">·</span><span class="nm">${me.n} <span class="hint">(você)</span></span><span class="hint">faltam ${brl(acima?5000-me.g:falta+5000)} pra entrar aqui</span></div>`);
+ document.getElementById('sq').innerHTML=sh.map(s=>`<div class="sq"><span style="font-size:18px">🧭</span><div style="flex:1"><b>${s.m}</b><div class="hint">${s.af.join(' · ')}</div></div><span class="hint">${s.g?'squad trouxe +'+brl(s.g):'squad buscando o positivo'}</span><b style="color:${s.b?'var(--ok)':'var(--mut2)'}">${s.b?brl(s.b*fator):''}</b></div>`).join('');
+}
+function conta(){ const me=P.find(p=>p.n===sel.value);
+ const vs=Array.from({length:Math.min(me.vn,6)},(_,i)=>{const v=Math.round(me.rec/Math.min(me.vn,6));return `<div style="display:flex;justify-content:space-between;padding:6px 0;border-bottom:1px solid #F1F2F7;font-size:12.5px"><span>${16+i*2}/10 · venda #${31800+i*17} · ${['Santiago','Cartagena','Punta Cana','Cusco','Bariloche','Cancún'][i]}</span><b>${brl(v)}</b></div>`;}).join('');
+ document.getElementById('ovc').innerHTML=`<h2 style="margin-bottom:8px">🧮 A sua conta</h2><div style="font-size:13.5px;line-height:1.7">Você recebeu <b>${me.leads} leads</b> no sprint.<br>Valor médio por lead: <b>${brl(me.rpl)}</b> <span class="hint">(metade sua média dos últimos 60 dias, metade a do time)</span><br>Esperado: ${me.leads} × ${brl(me.rpl)} = <b>${brl(me.esp)}</b><br>Você vendeu: <b>${brl(me.rec)}</b><br>${me.g>0?'Trouxe a mais: <b style="color:var(--ok)">+'+brl(me.g)+'</b>':'Falta: <b>'+brl(-me.g)+'</b>'}</div><h3 style="font-size:13px;margin:14px 0 4px">Vendas que contaram</h3>${vs}<div class="hint" style="margin-top:8px">alguma venda faltando ou errada? avise seu sub, que registra o ajuste.</div><div style="text-align:right;margin-top:12px"><button class="btn" onclick="document.getElementById('ov').style.display='none'">Fechar</button></div>`;
+ document.getElementById('ov').style.display='flex'; }
+draw();
+</script></body></html>
