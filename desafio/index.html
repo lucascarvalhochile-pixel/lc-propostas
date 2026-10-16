@@ -311,7 +311,7 @@ body{position:relative}
    <li><b>Esperado de cada um:</b> leads recebidos no sprint × valor médio por lead (metade a média da pessoa nos últimos 60 dias, metade a média do time). Assim quem já vende muito não é esmagado e quem vende pouco tem que subir.</li>
    <li><b>Vendeu a mais:</b> toda venda nova do sprint menos o esperado. Venda é venda e lead é lead, não importa quando chegou ou quando fecha. Venda acima de R$ 15 mil conta como R$ 15 mil.</li>
    <li><b>Bônus em degraus:</b> +R$ 5 mil = R$ 30 · +R$ 15 mil = R$ 80 · +R$ 30 mil = R$ 150 · +R$ 60 mil = R$ 300. Disciplina (resposta em 5 min + toques no dia certo) multiplica: ×1,2 ou ×0,8. Top 3 do sprint: R$ 300 / 200 / 100. Sherpa ganha 0,1% do que o squad trouxe a mais.</li>
-   <li><b>Trava da empresa (só a gestão vê):</b> o total pago nunca passa de 30% da margem extra (margem LC 7%). Se o time não trouxer receita a mais, ninguém recebe.</li>
+   <li><b>Trava da empresa (só a gestão vê):</b> o total pago pode chegar a 70% da margem extra (margem LC 7%). Se o time não trouxer receita a mais, ninguém recebe; se trouxer, a LC fica com no mínimo 30% do ganho novo e o resto premia o time.</li>
   </ol>
   <h3 style="font-size:14px;margin:14px 0 2px">O que o vendedor vê (abaixo, simulado)</h3>
   <ul>
@@ -320,7 +320,7 @@ body{position:relative}
    <li>Ranking só com quem já está num degrau; destaques pra quem mais trouxe e quem mais cresceu.</li>
    <li>"Ver a conta" abre o cálculo e as vendas que contaram (transparência evita briga).</li>
   </ul>
-  <p class="hint" style="margin-top:10px"><b>Pra decidir:</b> degraus, trava de 30% e squads (proposta v1; "Gabriela Martins" não existe no SHERPA).</p>
+  <p class="hint" style="margin-top:10px"><b>Pra decidir:</b> degraus, trava de 70% e squads (proposta v1; "Gabriela Martins" não existe no SHERPA).</p>
  </div>
 
  <div class="viewas">👁 mockup: ver como <select id="who" onchange="draw()" class="btn" style="padding:4px 10px"></select> (troque pra ver a tela de quem está acima ou abaixo do esperado) · números simulados do dia 8</div>
@@ -348,7 +348,7 @@ const prox=g=>DEG.find(([l])=>g<l);
 P.forEach(p=>{p.g=p.rec-p.esp;p.cres=p.esp?p.g/p.esp:0;p.base=degrau(p.g);p.b=Math.round(p.base*p.disc);});
 P.sort((a,b)=>b.g-a.g);
 const DEST=[300,200,100]; P.forEach((p,i)=>p.dest=(i<3&&p.base>0)?DEST[i]:0);
-const ganhoTime=P.reduce((a,p)=>a+p.g,0), limite=Math.max(0,ganhoTime*0.07*0.30);
+const ganhoTime=P.reduce((a,p)=>a+p.g,0), limite=Math.max(0,ganhoTime*0.07*0.70);
 const sh=Object.entries(SQ).map(([m,af])=>{const g=P.filter(p=>af.includes(first(p.n))).reduce((a,p)=>a+Math.max(0,p.g),0);return {m,af,g,b:g*0.001};});
 const bruto=P.reduce((a,p)=>a+p.b+p.dest,0)+sh.reduce((a,s)=>a+s.b,0); const fator=bruto>limite?limite/bruto:1;
 const bonus=p=>Math.round((p.b+p.dest)*fator);
