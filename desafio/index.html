@@ -122,6 +122,17 @@ body{position:relative}
 .ov>div{background:#fff;border-radius:20px;padding:22px;max-width:520px;width:100%;animation:lpop .4s cubic-bezier(.2,1.6,.4,1)}
 .viewas{background:var(--amarbg);color:#6a5320;border-radius:12px;padding:9px 14px;font-size:12.5px;font-weight:700;margin-top:14px;display:flex;gap:8px;align-items:center;flex-wrap:wrap}
 .guia{border:1.5px solid var(--azul)}
+.passos{display:grid;grid-template-columns:repeat(3,1fr);gap:10px;margin-top:16px}
+.passo{display:flex;gap:11px;align-items:flex-start;background:var(--papel);border:1px solid var(--linha);border-radius:14px;padding:13px 14px;transition:transform .15s,box-shadow .15s}
+.passo:hover{transform:translateY(-2px);box-shadow:0 10px 22px -16px rgba(1,0,254,.4)}
+.pn{flex:none;width:26px;height:26px;border-radius:50%;background:var(--azul);color:#fff;display:grid;place-items:center;font-family:'Sora';font-weight:800;font-size:13px}
+.passo b{font-family:'Sora';font-size:13.5px;display:block}
+.passo p{font-size:12px;color:var(--cinza);font-weight:600;line-height:1.5;margin-top:3px}
+.passo p b{display:inline;font-family:'Figtree';color:var(--tinta)}
+.verque{display:flex;gap:8px;align-items:center;flex-wrap:wrap;margin-top:12px;font-size:12.5px;font-weight:700;color:var(--cinza)}
+.verque em{font-style:normal;background:var(--azultint);color:var(--azul);border-radius:999px;padding:4px 11px;font-size:12px;font-weight:800}
+@media(max-width:860px){.passos{grid-template-columns:1fr}}
+
 .guia ol,.guia ul{margin:8px 0 0 18px;line-height:1.75;font-size:14px}
 .guia .tagp{font-size:11px;font-weight:800;letter-spacing:.07em;color:var(--azul);text-transform:uppercase}
 @media(max-width:860px){.me,.medals,.how{grid-template-columns:1fr}.bar{display:none}}
@@ -303,25 +314,22 @@ body{position:relative}
  </div>
 
  <div class="card guia">
-  <div class="tagp">Proposta · para o Bruno</div>
-  <h2 style="font-size:21px;margin:6px 0 4px">Desafio do Mês: como funciona, em 6 passos</h2>
-  <ol>
-   <li><b>Sprint:</b> começa 16/10 e fecha 31/10, último dia de outubro. Pagamento no dia 1º. Só conta o que acontecer nesse período. Depois vira mensal.</li>
-   <li><b>Quem participa:</b> todo mundo do comercial, inclusive subs e Graziela.</li>
-   <li><b>Esperado de cada um:</b> leads recebidos no sprint × valor médio por lead (metade a média da pessoa nos últimos 60 dias, metade a média do time). Assim quem já vende muito não é esmagado e quem vende pouco tem que subir.</li>
-   <li><b>Vendeu a mais:</b> toda venda nova do sprint menos o esperado. Venda é venda e lead é lead, não importa quando chegou ou quando fecha. Venda acima de R$ 15 mil conta como R$ 15 mil.</li>
-   <li><b>Bônus em degraus:</b> +R$ 5 mil = R$ 30 · +R$ 15 mil = R$ 80 · +R$ 30 mil = R$ 150 · +R$ 60 mil = R$ 300. Disciplina (resposta em 5 min + toques no dia certo) multiplica: ×1,2 ou ×0,8. Top 3 do sprint: R$ 300 / 200 / 100. Sherpa ganha 0,1% do que o squad trouxe a mais.</li>
-   <li><b>Trava da empresa (só a gestão vê):</b> o total pago pode chegar a 70% da margem extra (margem LC 7%). Se o time não trouxer receita a mais, ninguém recebe; se trouxer, a LC fica com no mínimo 30% do ganho novo e o resto premia o time.</li>
-  </ol>
-  <h3 style="font-size:14px;margin:14px 0 2px">O que o vendedor vê (abaixo, simulado)</h3>
-  <ul>
-   <li>Quanto trouxe a mais pra LC e o bônus. Sem margem, sem trava.</li>
-   <li>Quem está abaixo não aparece em vermelho pra ninguém: vê só "faltam R$ X pro 1º degrau".</li>
-   <li>Ranking só com quem já está num degrau; destaques pra quem mais trouxe e quem mais cresceu.</li>
-   <li>"Ver a conta" abre o cálculo e as vendas que contaram (transparência evita briga).</li>
-  </ul>
-  <p class="hint" style="margin-top:10px"><b>Pra decidir:</b> degraus, trava de 70% e squads (proposta v1; "Gabriela Martins" não existe no SHERPA).</p>
+  <div style="display:flex;align-items:center;justify-content:space-between;gap:12px;flex-wrap:wrap">
+   <div><div class="tagp">Proposta · para o Bruno</div><h2 style="font-size:21px;margin:4px 0 0">Como funciona o Desafio</h2></div>
+   <div class="hint" style="text-align:right">sprint <b style="color:var(--tinta)">16 → 31/10</b> · pagamento dia 1º · depois vira mensal</div>
+  </div>
+  <div class="passos">
+   <div class="passo"><span class="pn">1</span><div><b>Todo mundo joga</b><p>Vendedores, subs e Graziela. Sem exceção.</p></div></div>
+   <div class="passo"><span class="pn">2</span><div><b>Cada um tem seu esperado</b><p>Leads recebidos × sua média por lead dos últimos 60 dias (misturada com a do time).</p></div></div>
+   <div class="passo"><span class="pn">3</span><div><b>Venda é venda</b><p>Tudo que fechar no sprint conta, de qualquer lead. Acima de R$ 15 mil, conta como R$ 15 mil.</p></div></div>
+   <div class="passo"><span class="pn">4</span><div><b>Bônus em degraus</b><p>+5 mil = <b>R$ 30</b> · +15 mil = <b>R$ 80</b> · +30 mil = <b>R$ 150</b> · +60 mil = <b>R$ 300</b></p></div></div>
+   <div class="passo"><span class="pn">5</span><div><b>Disciplina turbina</b><p>Resposta em 5 min + toques no dia certo = degrau vale 20% a mais. Top 3: R$ 300/200/100. Sherpa: 0,1% do squad.</p></div></div>
+   <div class="passo"><span class="pn">6</span><div><b>Se a LC ganha, o time ganha</b><p>Até 70% da margem extra vira bônus. Time não trouxe nada a mais = ninguém recebe.</p></div></div>
+  </div>
+  <div class="verque"><span>👀 O vendedor vê só o que importa:</span><em>quanto trouxe a mais</em><em>seu bônus</em><em>"ver a conta" aberta</em><em>quem está abaixo não é exposto</em></div>
+  <div class="hint" style="margin-top:10px"><b>Pra decidir:</b> degraus · trava de 70% · squads <span style="font-weight:600">("Gabriela Martins" não existe no SHERPA)</span></div>
  </div>
+
 
  <div class="viewas">👁 mockup: ver como <select id="who" onchange="draw()" class="btn" style="padding:4px 10px"></select> (troque pra ver a tela de quem está acima ou abaixo do esperado) · números simulados do dia 8</div>
 
