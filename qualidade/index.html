@@ -264,21 +264,19 @@ label{font-size:11.5px;font-weight:800;color:var(--cinza);text-transform:upperca
         </div>
 
         <div class="card" data-wz="sistema">
-          <h2 style="font-size:15px">🩺 É o vendedor ou é o sistema?</h2>
-          <div class="hint" style="margin:3px 0 10px">O SHERPA checa sozinho o que a Qualidade não consegue ver na Zenvia. Falha de sistema não vira nota de ninguém: vira chamado.</div>
-          <div style="font-size:12.5px;line-height:1.55">
-            <div style="display:flex;justify-content:space-between;gap:8px;padding:8px 0;border-bottom:1px solid var(--papel)">
-              <span><b>Etiqueta de destino em branco</b><div class="mini">13% das conversas de outubro · em <b>todos</b> os vendedores</div></span>
-              <span class="tag t-cr" style="flex:none;height:fit-content">sistema</span></div>
-            <div style="display:flex;justify-content:space-between;gap:8px;padding:8px 0;border-bottom:1px solid var(--papel)">
-              <span><b>Transferência não chegou no administrativo</b><div class="mini">suspeita na requisição da API · sem log visível pra Qualidade</div></span>
-              <span class="tag t-cr" style="flex:none;height:fit-content">sistema</span></div>
-            <div style="display:flex;justify-content:space-between;gap:8px;padding:8px 0">
-              <span><b>TAG de etapa do follow-up</b><div class="mini">só 3 vendedores · os outros preenchem normal</div></span>
-              <span class="tag t-at" style="flex:none;height:fit-content">vendedor</span></div>
+          <h2 style="font-size:15px">🏷 Etiqueta de destino · quem não está preenchendo</h2>
+          <div class="hint" style="margin:3px 0 10px">Processo manual do vendedor: ao receber o lead, colocar a etiqueta do destino. O SHERPA conta sozinho, por pessoa, e isso entra na nota do módulo de TAGs e registros.</div>
+          <div style="font-size:12.5px">
+            <div style="display:flex;justify-content:space-between;gap:8px;padding:7px 0;border-bottom:1px solid var(--papel)"><span><b>Felipe Novaes</b><div class="mini">116 de 170 leads sem etiqueta</div></span><span class="tag t-cr" style="flex:none;height:fit-content">68%</span></div>
+            <div style="display:flex;justify-content:space-between;gap:8px;padding:7px 0;border-bottom:1px solid var(--papel)"><span><b>Yasmim Fernandes</b><div class="mini">100 de 174</div></span><span class="tag t-cr" style="flex:none;height:fit-content">57%</span></div>
+            <div style="display:flex;justify-content:space-between;gap:8px;padding:7px 0;border-bottom:1px solid var(--papel)"><span><b>Ana Paula Silveira</b><div class="mini">31 de 56</div></span><span class="tag t-cr" style="flex:none;height:fit-content">55%</span></div>
+            <div style="display:flex;justify-content:space-between;gap:8px;padding:7px 0;border-bottom:1px solid var(--papel)"><span><b>Jéssica Moreira</b><div class="mini">90 de 280</div></span><span class="tag t-at" style="flex:none;height:fit-content">32%</span></div>
+            <div style="display:flex;justify-content:space-between;gap:8px;padding:7px 0"><span><b>Resto do time (23 pessoas)</b><div class="mini">entre 0% e 20%, a maioria em 1%</div></span><span class="tag t-ok" style="flex:none;height:fit-content">ok</span></div>
           </div>
-          <div style="margin-top:11px;background:#EEF2FF;border-radius:12px;padding:10px 12px;font-size:12px;font-weight:700;color:#3730a3">
-            🔎 Regra: erro que aparece em todo mundo ao mesmo tempo é sistema, não é treino. A Qualidade marca "⚠ não deu pra avaliar" e o chamado abre sozinho com o log da conversa anexado.</div>
+          <div style="margin-top:11px;background:var(--amarbg);border-radius:12px;padding:10px 12px;font-size:12px;font-weight:700;color:var(--amar)">
+            📌 Outubro: 505 de 3.718 leads sem etiqueta (14%). Como o problema está concentrado em 4 pessoas e o resto do time preenche, é comportamento individual, não falha de sistema. Feedback individual resolve.</div>
+          <div style="margin-top:9px;background:#EEF2FF;border-radius:12px;padding:10px 12px;font-size:12px;font-weight:700;color:#3730a3">
+            🩺 Separado disso fica a <b>transferência que não chega no administrativo</b>, que é suspeita de sistema. Pro que for sistema existe o ⚠ no checklist: sai da nota do vendedor e abre chamado com o log da conversa.</div>
           <button class="btn gho" style="margin-top:10px;padding:6px 14px;font-size:12px" onclick="alert('Abre o diagnóstico da conversa: foi transferida? pra quem? tem etiqueta? o que a API respondeu? É o que falta hoje pra Qualidade não depender de acesso à Zenvia.')">🔬 ver diagnóstico de uma conversa</button>
         </div>
         <div class="card" data-wz="treino">
@@ -589,9 +587,9 @@ const WZ=[
  {v:'painel',sel:'erra',t:'4 · Onde o time erra (pauta do treinamento)',
   p:'Soma as ocorrências de todos os vendedores por categoria do seu script: agilidade, continuidade, follow-up, qualificação, TAGs, encerramento. O que mais aparece vira o treino do mês.',
   d:'Regra: o que aparece em <b>muita gente</b> é treino coletivo; o que aparece em <b>uma pessoa só</b> é feedback individual. Hoje você faz essa leitura de cabeça, aqui ela fica pronta.'},
- {v:'painel',sel:'sistema',t:'5 · É o vendedor ou é o sistema?',
-  p:'Esse card nasceu do que você falou no áudio: a transferência não joga pro administrativo e a etiqueta de destino não é gravada. Se for falha de sistema, <b>o vendedor não pode levar nota ruim por isso</b>.',
-  d:'Como separa: se o erro aparece em <b>todos</b> os vendedores ao mesmo tempo, é sistema. Se aparece em 2 ou 3, é comportamento. E o botão de diagnóstico mostra, por conversa, se foi transferida, pra quem, se tem etiqueta e o que a API respondeu, <b>sem você precisar de acesso à Zenvia</b>.'},
+ {v:'painel',sel:'sistema',t:'5 · Etiqueta de destino: quem não preenche',
+  p:'Você corrigiu o Lucas aqui e tinha razão: a etiqueta é <b>processo manual do vendedor</b>, então conta na nota dele. Esses números são reais, de outubro: 505 de 3.718 leads sem etiqueta, e <b>4 pessoas concentram quase tudo</b> enquanto o resto do time fica em 1%.',
+  d:'O SHERPA conta isso sozinho, por pessoa, e joga no módulo de TAGs e registros. Você não precisa abrir conversa por conversa pra contar. Separado disso fica a <b>transferência que não chega no administrativo</b>, que é suspeita de sistema: pra esse caso tem o ⚠ no checklist, que tira o item da nota e abre chamado com o log junto.'},
  {v:'painel',sel:'treino',t:'6 · O treino está pegando?',
   p:'Pega a média do módulo que foi treinado e compara antes e depois, olhando só quem participou do treino.',
   d:'Por que só quem participou: se olhar o time todo, a melhora pode ser outra coisa (mês melhor, campanha nova). Comparando quem treinou com quem não treinou, sobra o efeito do treino.'},
