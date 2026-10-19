@@ -558,6 +558,7 @@ montaForm(); montaMods(); montaCal();
 #wzbox .de{background:var(--papel);border-radius:11px;padding:9px 11px;font-size:12px;font-weight:700;color:var(--cinza);margin-top:9px;line-height:1.5}
 #wzbox .de b{color:var(--azul)}
 .wzval{display:flex;gap:7px;flex-wrap:wrap;margin-top:12px;align-items:center}
+.wzval>span{width:100%}
 .wzval button{border:1px solid var(--linha);background:#fff;border-radius:999px;padding:6px 13px;font:inherit;font-weight:800;font-size:12px;cursor:pointer}
 .wzval .sim.on{background:var(--verdebg);border-color:#9ae6b8;color:#138a43}
 .wzval .nao.on{background:#FFEDE5;border-color:#f6c3a9;color:var(--laranja)}
@@ -637,7 +638,8 @@ function wzShow(){
   if(s.v) ver(s.v);
   const el=wzAlvo(s.sel);
   const r=wzResp[wzI]||{};
-  b.className='on'+(el?'':' center');
+  const alto=el&&el.getBoundingClientRect().height>window.innerHeight*.72; // bloco maior que a tela: balão no centro
+  b.className='on'+(el&&!alto?'':' center');
   b.innerHTML=`<div class="pass">Passo ${wzI} de ${WZ.length-1}${wzI?'':' · comece por aqui'}</div>
     <h3>${s.t}</h3><p>${s.p}</p><div class="de">${s.d}</div>
     ${wzI?`<div class="wzval"><span style="font-size:11.5px;font-weight:800;color:var(--cinza)">É assim que você trabalha?</span>
@@ -648,7 +650,8 @@ function wzShow(){
       ${wzI?'<button class="btn gho" onclick="wzVai(-1)">← voltar</button>':''}
       <button class="btn pri" onclick="wzVai(1)">${wzI===WZ.length-1?'ver o resumo ✓':(wzI?'próximo →':'bora, me mostra →')}</button>
       <button class="btn gho" style="margin-left:auto" onclick="wzFim()">sair</button></div>`;
-  if(el){ el.classList.add('wz-spot'); el.scrollIntoView({behavior:'smooth',block:'center'});
+  if(el){ el.classList.add('wz-spot'); el.scrollIntoView({behavior:'smooth',block:alto?'start':'center'});
+    if(alto){ b.style.top=''; b.style.left=''; return; }
     setTimeout(()=>{ const rc=el.getBoundingClientRect(); const bw=b.offsetWidth, bh=b.offsetHeight;
       let top=window.scrollY+rc.bottom+14, left=window.scrollX+rc.left+rc.width/2-bw/2;
       if(rc.bottom+bh+20>window.innerHeight) top=window.scrollY+Math.max(12,rc.top-bh-14);
