@@ -66,6 +66,7 @@ td{padding:11px 6px;border-bottom:1px solid var(--papel)}
 .opt.on.p{background:var(--amarbg);border-color:#f0d79a;color:var(--amar)}
 .opt.on.n{background:#FFEDE5;border-color:#f6c3a9;color:var(--laranja)}
 .opt.on.na{background:var(--papel);color:var(--cinza)}
+.opt.on.sis{background:#EEF2FF;border-color:#b9c2f5;color:#3730a3}
 .modal{position:fixed;inset:0;background:rgba(0,8,32,.55);display:grid;place-items:center;z-index:99;padding:18px}
 .modal .box{background:#fff;border-radius:20px;padding:22px;max-width:620px;width:100%;max-height:86vh;overflow:auto;box-shadow:0 30px 70px rgba(0,0,10,.3)}
 input,select,textarea{font:inherit;border:1px solid var(--linha);border-radius:10px;padding:8px 11px;width:100%;background:#fff}
@@ -263,6 +264,24 @@ label{font-size:11.5px;font-weight:800;color:var(--cinza);text-transform:upperca
         </div>
 
         <div class="card">
+          <h2 style="font-size:15px">🩺 É o vendedor ou é o sistema?</h2>
+          <div class="hint" style="margin:3px 0 10px">O SHERPA checa sozinho o que a Qualidade não consegue ver na Zenvia. Falha de sistema não vira nota de ninguém: vira chamado.</div>
+          <div style="font-size:12.5px;line-height:1.55">
+            <div style="display:flex;justify-content:space-between;gap:8px;padding:8px 0;border-bottom:1px solid var(--papel)">
+              <span><b>Etiqueta de destino em branco</b><div class="mini">13% das conversas de outubro · em <b>todos</b> os vendedores</div></span>
+              <span class="tag t-cr" style="flex:none;height:fit-content">sistema</span></div>
+            <div style="display:flex;justify-content:space-between;gap:8px;padding:8px 0;border-bottom:1px solid var(--papel)">
+              <span><b>Transferência não chegou no administrativo</b><div class="mini">suspeita na requisição da API · sem log visível pra Qualidade</div></span>
+              <span class="tag t-cr" style="flex:none;height:fit-content">sistema</span></div>
+            <div style="display:flex;justify-content:space-between;gap:8px;padding:8px 0">
+              <span><b>TAG de etapa do follow-up</b><div class="mini">só 3 vendedores · os outros preenchem normal</div></span>
+              <span class="tag t-at" style="flex:none;height:fit-content">vendedor</span></div>
+          </div>
+          <div style="margin-top:11px;background:#EEF2FF;border-radius:12px;padding:10px 12px;font-size:12px;font-weight:700;color:#3730a3">
+            🔎 Regra: erro que aparece em todo mundo ao mesmo tempo é sistema, não é treino. A Qualidade marca "⚠ não deu pra avaliar" e o chamado abre sozinho com o log da conversa anexado.</div>
+          <button class="btn gho" style="margin-top:10px;padding:6px 14px;font-size:12px" onclick="alert('Abre o diagnóstico da conversa: foi transferida? pra quem? tem etiqueta? o que a API respondeu? É o que falta hoje pra Qualidade não depender de acesso à Zenvia.')">🔬 ver diagnóstico de uma conversa</button>
+        </div>
+        <div class="card">
           <h2 style="font-size:15px">📊 O treino está pegando?</h2>
           <div class="hint" style="margin:3px 0 10px">Média do módulo antes e depois do treino de Follow-up (02/10).</div>
           <div style="display:flex;gap:14px;text-align:center">
@@ -403,6 +422,9 @@ label{font-size:11.5px;font-weight:800;color:var(--cinza);text-transform:upperca
         <button class="btn gho" style="padding:4px 11px;font-size:11.5px">🎲 sortear de novo</button>
       </div>
       <div class="mini" style="margin-top:5px">O sistema sorteia misturando ganhas, perdidas e travadas. Perdida e travada ensinam mais, e ninguém escolhe a conversa que quer mostrar.</div>
+      <div style="margin-top:10px;background:#EEF2FF;border-radius:12px;padding:10px 12px;font-size:12px;font-weight:700;color:#3730a3">
+        ⚡ Os itens marcados como <b>automático</b> já vêm preenchidos do próprio SHERPA (tempo de resposta, toques do playbook, etiqueta, encerramento). A Qualidade só confere e comenta.
+        Se o dado não existe porque o sistema falhou, marque <b>⚠</b>: sai da nota do vendedor e abre chamado técnico.</div>
 
       <div id="form"></div>
 
@@ -459,7 +481,7 @@ const MOD=[
  {n:'Módulo 5 — Envio da reserva + nota pro pós',p:20,c1:75,c3:88,
   it:[['Enviou tudo que é obrigatório (voucher, horários, inclusos, documentos)',1],['Seguiu o formato padrão de envio',0],['Confirmou que o cliente recebeu e entendeu',0],['Registrou a nota pro pós com contexto',1],['Handoff claro pro pós-venda',0]]}
 ];
-const OP=[['A','Atende','a'],['P','Parcial','p'],['N','Não','n'],['—','N/A','na']];
+const OP=[['A','Atende','a'],['P','Parcial','p'],['N','Não atende','n'],['—','N/A','na'],['⚠','Não deu pra avaliar: falha de sistema (não entra na nota e abre chamado)','sis']];
 function montaForm(){
   const el=document.getElementById('form'); if(!el) return;
   el.innerHTML=MOD.map((m,mi)=>`<div style="margin-top:18px">
@@ -481,7 +503,7 @@ function recalc(){
   document.querySelectorAll('#form > div').forEach((bl,mi)=>{
     let p=0,n=0;
     bl.querySelectorAll('.crit').forEach(c=>{ const on=c.querySelector('.opt.on'); if(!on) return;
-      if(on.classList.contains('na')) return;
+      if(on.classList.contains('na')||on.classList.contains('sis')) return;
       n++; p+= on.classList.contains('a')?1: on.classList.contains('p')?.5:0; });
     const el=document.getElementById('m'+mi);
     if(n){ const pct=Math.round(p/n*100); el.textContent=pct+'%'; el.style.color=pct>=75?'#138a43':(pct>=60?'var(--amar)':'var(--laranja)');
