@@ -196,7 +196,7 @@ label{font-size:11.5px;font-weight:800;color:var(--cinza);text-transform:upperca
 
   <!-- ============ PAINEL ============ -->
   <div id="v-painel">
-    <div class="kpis">
+    <div class="kpis" data-wz="kpis">
       <div class="kpi"><div class="kl">🎯 Nota média do time</div><div class="kv" style="color:#138a43">82%</div><div class="kt">Bom · ▲ 6 pts vs set · 14 ciclos</div>
         <div class="bar" style="margin-top:8px"><i style="width:82%;background:#138a43"></i></div></div>
       <div class="kpi"><div class="kl">🔁 Reincidência</div><div class="kv" style="color:var(--amar)">23%</div><div class="kt">3 de 13 lacunas voltaram após feedback</div>
@@ -205,7 +205,7 @@ label{font-size:11.5px;font-weight:800;color:var(--cinza);text-transform:upperca
       <div class="kpi"><div class="kl">⏳ Ciclos abertos</div><div class="kv" style="color:var(--laranja)">5</div><div class="kt">2 atrasados · veja abaixo</div></div>
     </div>
 
-    <div class="card hero" style="display:flex;gap:18px;align-items:center;flex-wrap:wrap">
+    <div class="card hero" data-wz="hoje" style="display:flex;gap:18px;align-items:center;flex-wrap:wrap">
       <div style="flex:1;min-width:250px">
         <div style="font-family:Sora,sans-serif;font-weight:800;font-size:18px">⚡ Faça hoje · 4 coisas</div>
         <div style="color:#B9C6EA;font-size:12.5px;font-weight:600;margin-top:3px">O ciclo morre quando o feedback atrasa. O SHERPA cobra o prazo pra você.</div>
@@ -220,7 +220,7 @@ label{font-size:11.5px;font-weight:800;color:var(--cinza);text-transform:upperca
     </div>
 
     <div class="grid2">
-      <div class="card">
+      <div class="card" data-wz="tabela">
         <h2 style="font-size:16px">👥 Acompanhamento por vendedor</h2>
         <div class="hint" style="margin:3px 0 10px">Nota do último ciclo, o que falta fazer e quando vence. Clique pra abrir a ficha.</div>
         <table>
@@ -249,7 +249,7 @@ label{font-size:11.5px;font-weight:800;color:var(--cinza);text-transform:upperca
       </div>
 
       <div>
-        <div class="card" style="margin-top:14px">
+        <div class="card" data-wz="erra" style="margin-top:14px">
           <h2 style="font-size:15px">🔎 Onde o time erra</h2>
           <div class="hint" style="margin:3px 0 10px">Ocorrências por categoria no mês. É daqui que sai a pauta do treinamento, não de achismo.</div>
           <div style="display:flex;flex-direction:column;gap:9px">
@@ -263,7 +263,7 @@ label{font-size:11.5px;font-weight:800;color:var(--cinza);text-transform:upperca
             💡 Follow-up lidera 3 meses seguidos. Vale treino coletivo, não feedback individual.</div>
         </div>
 
-        <div class="card">
+        <div class="card" data-wz="sistema">
           <h2 style="font-size:15px">🩺 É o vendedor ou é o sistema?</h2>
           <div class="hint" style="margin:3px 0 10px">O SHERPA checa sozinho o que a Qualidade não consegue ver na Zenvia. Falha de sistema não vira nota de ninguém: vira chamado.</div>
           <div style="font-size:12.5px;line-height:1.55">
@@ -281,7 +281,7 @@ label{font-size:11.5px;font-weight:800;color:var(--cinza);text-transform:upperca
             🔎 Regra: erro que aparece em todo mundo ao mesmo tempo é sistema, não é treino. A Qualidade marca "⚠ não deu pra avaliar" e o chamado abre sozinho com o log da conversa anexado.</div>
           <button class="btn gho" style="margin-top:10px;padding:6px 14px;font-size:12px" onclick="alert('Abre o diagnóstico da conversa: foi transferida? pra quem? tem etiqueta? o que a API respondeu? É o que falta hoje pra Qualidade não depender de acesso à Zenvia.')">🔬 ver diagnóstico de uma conversa</button>
         </div>
-        <div class="card">
+        <div class="card" data-wz="treino">
           <h2 style="font-size:15px">📊 O treino está pegando?</h2>
           <div class="hint" style="margin:3px 0 10px">Média do módulo antes e depois do treino de Follow-up (02/10).</div>
           <div style="display:flex;gap:14px;text-align:center">
@@ -297,7 +297,7 @@ label{font-size:11.5px;font-weight:800;color:var(--cinza);text-transform:upperca
   <!-- ============ AGENDA ============ -->
   <div id="v-agenda" class="hide">
     <div class="grid2">
-      <div class="card">
+      <div class="card" data-wz="cal">
         <div style="display:flex;align-items:center;gap:10px;flex-wrap:wrap">
           <h2 style="font-size:16px">📅 Outubro 2026</h2>
           <span class="tag t-az">■ avaliação</span><span class="tag t-at">■ feedback</span><span class="tag t-ok">■ reavaliação</span><span class="tag t-cr">■ atrasado</span>
@@ -306,7 +306,7 @@ label{font-size:11.5px;font-weight:800;color:var(--cinza);text-transform:upperca
         <div class="hint" style="margin:4px 0 10px">Cada avaliação já nasce com feedback e reavaliação (+7 dias) agendados sozinhos.</div>
         <div class="cal" id="cal"></div>
       </div>
-      <div class="card">
+      <div class="card" data-wz="prox">
         <h2 style="font-size:15px">Próximos 7 dias</h2>
         <div class="tl" style="margin-top:10px">
           <div class="it bad"><b style="font-size:13.5px">Feedback · Jéssica Moreira</b><div class="mini">venceu 16/10 · com Aline (sub) · atrasado 3 dias</div>
@@ -324,7 +324,7 @@ label{font-size:11.5px;font-weight:800;color:var(--cinza);text-transform:upperca
 
   <!-- ============ FICHA ============ -->
   <div id="v-ficha" class="hide">
-    <div class="card hero" style="display:flex;gap:20px;align-items:center;flex-wrap:wrap">
+    <div class="card hero" data-wz="fhero" style="display:flex;gap:20px;align-items:center;flex-wrap:wrap">
       <div style="width:58px;height:58px;border-radius:50%;background:rgba(255,255,255,.15);display:grid;place-items:center;font-family:Sora,sans-serif;font-weight:800;font-size:22px">JM</div>
       <div style="flex:1;min-width:200px">
         <div style="font-family:Sora,sans-serif;font-weight:800;font-size:21px">Jéssica Moreira</div>
@@ -338,7 +338,7 @@ label{font-size:11.5px;font-weight:800;color:var(--cinza);text-transform:upperca
     </div>
 
     <div class="grid2">
-      <div class="card">
+      <div class="card" data-wz="tl">
         <h2 style="font-size:16px">🧭 Linha do tempo do acompanhamento</h2>
         <div class="hint" style="margin:3px 0 12px">Tudo que foi feito com ela fica aqui: avaliação, o que foi combinado, anexo e o que aconteceu depois.</div>
         <div class="tl">
@@ -367,12 +367,12 @@ label{font-size:11.5px;font-weight:800;color:var(--cinza);text-transform:upperca
       </div>
 
       <div>
-        <div class="card" style="margin-top:14px">
+        <div class="card" data-wz="mods" style="margin-top:14px">
           <h2 style="font-size:15px">📈 Nota por módulo</h2>
           <div class="hint" style="margin:3px 0 10px">Ciclo 1 → ciclo 3. Mostra onde ela melhorou e onde travou.</div>
           <div id="mods" style="display:flex;flex-direction:column;gap:11px"></div>
         </div>
-        <div class="card">
+        <div class="card" data-wz="reinc">
           <h2 style="font-size:15px">🔁 Lacunas reincidentes</h2>
           <div style="margin-top:8px;font-size:12.5px">
             <div style="display:flex;justify-content:space-between;padding:7px 0;border-bottom:1px solid var(--papel)"><span><b>Follow-up sem valor novo</b><div class="mini">apontado em 28/08, 23/09, 16/10</div></span><span class="tag t-cr">3ª vez</span></div>
@@ -382,7 +382,7 @@ label{font-size:11.5px;font-weight:800;color:var(--cinza);text-transform:upperca
           <div style="margin-top:11px;background:#FFEDE5;border-radius:12px;padding:10px 12px;font-size:12px;font-weight:700;color:var(--laranja)">
             ⚠️ 3ª reincidência no mesmo ponto. O SHERPA sugere escalar pro gerente em vez de repetir o mesmo feedback.</div>
         </div>
-        <div class="card">
+        <div class="card" data-wz="num">
           <h2 style="font-size:15px">🔗 Cruzando com o número</h2>
           <div style="margin-top:8px;font-size:12.5px;line-height:1.6">
             Rep. Dominicana: <b>R$ 89</b> por lead · squad faz <b>R$ 641</b><br>
@@ -396,7 +396,7 @@ label{font-size:11.5px;font-weight:800;color:var(--cinza);text-transform:upperca
   </div>
   <!-- ============ NOVA AVALIAÇÃO ============ -->
   <div id="v-aval" class="hide">
-    <div class="card">
+    <div class="card" data-wz="aval">
       <div style="display:flex;gap:10px;align-items:center;flex-wrap:wrap">
         <h2 style="font-size:17px">✍️ Avaliação de qualidade</h2>
         <span class="tag t-az">ciclo 4 · reavaliação</span>
@@ -544,4 +544,146 @@ document.querySelectorAll('.sub button').forEach(b=>b.onclick=()=>ver(b.dataset.
 function abrirAcomp(nome){ document.getElementById('mv').value=nome||'Mariana Jofre'; document.getElementById('modal').classList.remove('hide'); }
 montaForm(); montaMods(); montaCal();
 </script>
+<style>
+#wzmask{position:fixed;inset:0;background:rgba(0,8,32,.62);z-index:90;display:none}
+#wzmask.on{display:block}
+.wz-spot{position:relative;z-index:95!important;box-shadow:0 0 0 4px #fff,0 0 0 9px rgba(1,0,254,.45),0 24px 60px rgba(0,0,10,.45)!important;border-radius:20px!important;animation:wzPulse 2s ease-in-out infinite}
+@keyframes wzPulse{50%{box-shadow:0 0 0 4px #fff,0 0 0 14px rgba(1,0,254,.22),0 24px 60px rgba(0,0,10,.45)!important}}
+#wzbox{position:absolute;z-index:96;width:min(420px,92vw);background:#fff;border-radius:18px;padding:17px 18px;box-shadow:0 26px 70px rgba(0,0,10,.4);display:none}
+#wzbox.on{display:block}
+#wzbox.center{position:fixed;left:50%;top:50%;transform:translate(-50%,-50%);width:min(520px,92vw)}
+#wzbox .pass{font-size:11px;font-weight:800;color:var(--azul);letter-spacing:.5px;text-transform:uppercase}
+#wzbox h3{font-size:17px;margin:3px 0 6px}
+#wzbox p{font-size:13.5px;line-height:1.55;color:var(--tinta)}
+#wzbox .de{background:var(--papel);border-radius:11px;padding:9px 11px;font-size:12px;font-weight:700;color:var(--cinza);margin-top:9px;line-height:1.5}
+#wzbox .de b{color:var(--azul)}
+.wzval{display:flex;gap:7px;flex-wrap:wrap;margin-top:12px;align-items:center}
+.wzval button{border:1px solid var(--linha);background:#fff;border-radius:999px;padding:6px 13px;font:inherit;font-weight:800;font-size:12px;cursor:pointer}
+.wzval .sim.on{background:var(--verdebg);border-color:#9ae6b8;color:#138a43}
+.wzval .nao.on{background:#FFEDE5;border-color:#f6c3a9;color:var(--laranja)}
+#wznav{display:flex;gap:8px;margin-top:12px;align-items:center}
+#wzcoment{display:none;margin-top:8px}
+#wzcoment.on{display:block}
+#wzhelp{position:fixed;right:18px;bottom:18px;z-index:80;background:var(--azul);color:#fff;border:0;border-radius:999px;padding:12px 19px;font:inherit;font-weight:800;font-size:13.5px;cursor:pointer;box-shadow:0 14px 34px rgba(1,0,254,.35)}
+.wzdot{position:absolute;top:10px;right:12px;width:20px;height:20px;border-radius:50%;background:var(--azultint);color:var(--azul);font-size:12px;font-weight:800;display:grid;place-items:center;cursor:pointer;z-index:2}
+@media(max-width:700px){#wzbox{width:94vw}}
+</style>
+<div id="wzmask" onclick="wzFim()"></div>
+<div id="wzbox"></div>
+<button id="wzhelp" onclick="wzIni()">❓ Como funciona</button>
+<script>
+const WZ=[
+ {v:'painel',sel:null,t:'Bem-vinda ao painel de Qualidade 👋',
+  p:'Bruna, essa é a tela que a gente está desenhando pro seu processo. Vou te mostrar as 16 etapas, uma por uma, explicando <b>de onde sai cada informação</b> e <b>o que você faz ali</b>.',
+  d:'Em cada passo tem dois botões: <b>✅ é assim mesmo</b> ou <b>✏️ não é bem assim</b>. Se marcar o segundo, escreve o que muda. No fim eu te mostro a lista do que precisa ajustar antes de programar.'},
+ {v:'painel',sel:'kpis',t:'1 · Os quatro números do topo',
+  p:'<b>Nota média do time</b> é a média das notas do último ciclo de cada vendedor, com o peso dos 5 módulos do seu scorecard. <b>Reincidência</b> é o que mais importa: de todas as lacunas que você apontou, quantas voltaram a aparecer depois do feedback. <b>Conversas avaliadas</b> soma as 10 de cada ciclo. <b>Ciclos abertos</b> é o que começou e ainda não terminou.',
+  d:'De onde vem: <b>das suas avaliações</b>. Nada aqui é automático, é o resultado do que você preencheu no formulário.'},
+ {v:'painel',sel:'hoje',t:'2 · Faça hoje: o que está vencendo',
+  p:'Seu ciclo é avaliar → dar feedback → reavaliar em 7 dias. Aqui aparece o que passou do prazo em vermelho e o que vence hoje e amanhã em amarelo. É a primeira coisa que você vê ao abrir.',
+  d:'Por que existe: processo de qualidade costuma morrer no feedback atrasado. O <b>SHERPA conta os dias sozinho</b> a partir da data da avaliação e cobra você.'},
+ {v:'painel',sel:'tabela',t:'3 · Acompanhamento por vendedor',
+  p:'Uma linha por vendedor: a nota do último ciclo, se subiu ou caiu em relação ao ciclo anterior, <b>em que etapa do ciclo ele está</b> e quando vence. Quem nunca foi avaliado aparece com "agendar avaliação", pra ninguém ficar esquecido.',
+  d:'Clicando na linha abre a ficha completa daquela pessoa, com todo o histórico.'},
+ {v:'painel',sel:'erra',t:'4 · Onde o time erra (pauta do treinamento)',
+  p:'Soma as ocorrências de todos os vendedores por categoria do seu script: agilidade, continuidade, follow-up, qualificação, TAGs, encerramento. O que mais aparece vira o treino do mês.',
+  d:'Regra: o que aparece em <b>muita gente</b> é treino coletivo; o que aparece em <b>uma pessoa só</b> é feedback individual. Hoje você faz essa leitura de cabeça, aqui ela fica pronta.'},
+ {v:'painel',sel:'sistema',t:'5 · É o vendedor ou é o sistema?',
+  p:'Esse card nasceu do que você falou no áudio: a transferência não joga pro administrativo e a etiqueta de destino não é gravada. Se for falha de sistema, <b>o vendedor não pode levar nota ruim por isso</b>.',
+  d:'Como separa: se o erro aparece em <b>todos</b> os vendedores ao mesmo tempo, é sistema. Se aparece em 2 ou 3, é comportamento. E o botão de diagnóstico mostra, por conversa, se foi transferida, pra quem, se tem etiqueta e o que a API respondeu, <b>sem você precisar de acesso à Zenvia</b>.'},
+ {v:'painel',sel:'treino',t:'6 · O treino está pegando?',
+  p:'Pega a média do módulo que foi treinado e compara antes e depois, olhando só quem participou do treino.',
+  d:'Por que só quem participou: se olhar o time todo, a melhora pode ser outra coisa (mês melhor, campanha nova). Comparando quem treinou com quem não treinou, sobra o efeito do treino.'},
+ {v:'agenda',sel:'cal',t:'7 · A agenda do mês',
+  p:'Todo compromisso do seu processo no calendário: avaliação em azul, feedback em amarelo, reavaliação em verde, atrasado em vermelho.',
+  d:'O que é automático: quando você salva uma avaliação, o <b>feedback e a reavaliação de 7 dias entram sozinhos</b> na agenda. Você não precisa lembrar de marcar.'},
+ {v:'agenda',sel:'prox',t:'8 · Próximos 7 dias e o registro',
+  p:'A lista do que vem, em ordem. Cada item abre direto a ação: registrar o feedback, abrir o formulário da reavaliação.',
+  d:'Clique em <b>"registrar agora"</b> pra ver a janela onde fica guardado o acompanhamento: tipo, quem participou, o que foi combinado, o anexo (print do WhatsApp, gravação do Meet, PDF) e qual a próxima ação, que volta pro calendário.'},
+ {v:'ficha',sel:'fhero',t:'9 · A ficha do vendedor',
+  p:'Tudo de uma pessoa num lugar: squads em que ela atende, quem é o subgerente dela, a nota atual com a classificação do seu scorecard e quantos ciclos ela já teve.',
+  d:'<b>Crítico / Atenção / Bom / Excelente</b> são as faixas que já estão na aba Config da sua planilha: abaixo de 60, 60 a 74, 75 a 89, 90 ou mais.'},
+ {v:'ficha',sel:'tl',t:'10 · Linha do tempo do acompanhamento',
+  p:'Essa é a parte central pro que o Lucas pediu. Toda avaliação, todo feedback, todo 1-a-1 e toda reavaliação ficam registrados em ordem, com as lacunas apontadas, <b>o que foi combinado</b> e os anexos.',
+  d:'Daqui a 3 meses você abre e vê: o que foi falado em setembro, o que ela prometeu, e se mudou. O ciclo seguinte não começa do zero.'},
+ {v:'ficha',sel:'mods',t:'11 · Nota por módulo, do primeiro ao último ciclo',
+  p:'Mostra a evolução em cada um dos 5 módulos. A barra é a nota de hoje; o risco cinza é onde ela começou.',
+  d:'Serve pra ver <b>onde travou</b>. No exemplo, Padrão de atendimento subiu de 50 pra 83, mas Follow-up só saiu de 40 pra 55: é ali que o feedback não está pegando.'},
+ {v:'ficha',sel:'reinc',t:'12 · Lacunas reincidentes',
+  p:'As falhas que você já apontou e voltaram, com as datas de cada vez. Verde quando foi corrigido de verdade.',
+  d:'Na terceira reincidência o sistema sugere <b>escalar pro gerente</b> em vez de repetir o mesmo feedback. Repetir pela quarta vez não é acompanhamento, é desgaste.'},
+ {v:'ficha',sel:'num',t:'13 · Cruzando com o número de vendas',
+  p:'A mesma pessoa, vista pela tela de Squads: quanto ela rende por lead em cada destino e qual a taxa de resposta em 5 minutos.',
+  d:'Por que junto: o Squads mostra <b>que</b> o resultado está ruim; a sua avaliação mostra <b>por quê</b>. Uma coisa sustenta a outra na hora de falar com o subgerente.'},
+ {v:'aval',sel:'aval',t:'14 · O formulário: a amostra',
+  p:'Você escolhe o vendedor e o destino, e o sistema <b>sorteia as 10 conversas</b> misturando ganhas, perdidas e travadas. Cada código abre a conversa no Zenvia.',
+  d:'Por que sorteado: tirar o viés de escolher conversa. Perdida e travada ensinam mais que ganha, então a mistura é proposital. Se precisar, dá pra sortear de novo.'},
+ {v:'aval',sel:'aval',t:'15 · O checklist, o automático e o ⚠',
+  p:'Os 5 módulos do seu scorecard com os critérios do script dentro. Em cada um: <b>A</b>tende, <b>P</b>arcial, <b>N</b>ão atende, <b>—</b> não se aplica, e <b>⚠</b> não deu pra avaliar.',
+  d:'Os itens com selo <b>⚡ automático</b> já vêm preenchidos do próprio SHERPA (tempo de resposta, toques do playbook, etiqueta, encerramento) e você só confere. O <b>⚠</b> é pra quando o sistema falhou: sai da nota do vendedor e abre chamado técnico com o log junto.'},
+ {v:'aval',sel:'aval',t:'16 · A nota e o fim do ciclo',
+  p:'A nota do módulo e a nota final vão sendo calculadas conforme você clica, com os pesos da sua aba Config. Critério crítico marcado como "não atende" acende falha crítica independente da nota.',
+  d:'Ao salvar: entra no histórico do vendedor, <b>agenda o feedback com o subgerente</b> e marca a reavaliação pra 7 dias depois. As 3 lacunas do fim alimentam o card "onde o time erra".'},
+];
+let wzI=0; const wzResp={};
+function wzIni(){ wzI=0; document.getElementById('wzmask').classList.add('on'); wzShow(); }
+function wzFim(){ document.getElementById('wzmask').classList.remove('on');
+  const b=document.getElementById('wzbox'); b.classList.remove('on');
+  document.querySelectorAll('.wz-spot').forEach(e=>e.classList.remove('wz-spot')); }
+function wzAlvo(k){ return k?document.querySelector('[data-wz="'+k+'"]'):null; }
+function wzShow(){
+  const s=WZ[wzI], b=document.getElementById('wzbox');
+  document.querySelectorAll('.wz-spot').forEach(e=>e.classList.remove('wz-spot'));
+  if(s.v) ver(s.v);
+  const el=wzAlvo(s.sel);
+  const r=wzResp[wzI]||{};
+  b.className='on'+(el?'':' center');
+  b.innerHTML=`<div class="pass">Passo ${wzI} de ${WZ.length-1}${wzI?'':' · comece por aqui'}</div>
+    <h3>${s.t}</h3><p>${s.p}</p><div class="de">${s.d}</div>
+    ${wzI?`<div class="wzval"><span style="font-size:11.5px;font-weight:800;color:var(--cinza)">É assim que você trabalha?</span>
+      <button class="sim${r.v==='sim'?' on':''}" onclick="wzMarca('sim')">✅ é assim mesmo</button>
+      <button class="nao${r.v==='nao'?' on':''}" onclick="wzMarca('nao')">✏️ não é bem assim</button></div>
+      <div id="wzcoment" class="${r.v==='nao'?'on':''}"><textarea id="wzt" rows="2" placeholder="O que muda? Escreve do seu jeito.">${r.txt||''}</textarea></div>`:''}
+    <div id="wznav">
+      ${wzI?'<button class="btn gho" onclick="wzVai(-1)">← voltar</button>':''}
+      <button class="btn pri" onclick="wzVai(1)">${wzI===WZ.length-1?'ver o resumo ✓':(wzI?'próximo →':'bora, me mostra →')}</button>
+      <button class="btn gho" style="margin-left:auto" onclick="wzFim()">sair</button></div>`;
+  if(el){ el.classList.add('wz-spot'); el.scrollIntoView({behavior:'smooth',block:'center'});
+    setTimeout(()=>{ const rc=el.getBoundingClientRect(); const bw=b.offsetWidth, bh=b.offsetHeight;
+      let top=window.scrollY+rc.bottom+14, left=window.scrollX+rc.left+rc.width/2-bw/2;
+      if(rc.bottom+bh+20>window.innerHeight) top=window.scrollY+Math.max(12,rc.top-bh-14);
+      left=Math.max(10,Math.min(left,window.scrollX+window.innerWidth-bw-10));
+      b.style.top=top+'px'; b.style.left=left+'px'; },420); }
+}
+function wzMarca(v){ const t=document.getElementById('wzt');
+  wzResp[wzI]={v:v,txt:t?t.value:''};
+  document.querySelectorAll('.wzval .sim,.wzval .nao').forEach(x=>x.classList.remove('on'));
+  document.querySelector('.wzval .'+v).classList.add('on');
+  document.getElementById('wzcoment').classList.toggle('on',v==='nao'); }
+function wzVai(d){ const t=document.getElementById('wzt');
+  if(t&&wzResp[wzI]) wzResp[wzI].txt=t.value;
+  if(wzI===WZ.length-1&&d>0) return wzResumo();
+  wzI=Math.max(0,Math.min(WZ.length-1,wzI+d)); wzShow(); }
+function wzResumo(){
+  document.querySelectorAll('.wz-spot').forEach(e=>e.classList.remove('wz-spot'));
+  const ok=Object.values(wzResp).filter(r=>r.v==='sim').length;
+  const aj=Object.entries(wzResp).filter(([i,r])=>r.v==='nao');
+  const b=document.getElementById('wzbox'); b.className='on center';
+  b.innerHTML=`<div class="pass">Fim do passo a passo</div><h3>Obrigado, Bruna 💙</h3>
+    <p>Você confirmou <b>${ok}</b> etapa${ok===1?'':'s'} e pediu ajuste em <b>${aj.length}</b>.</p>
+    ${aj.length?`<div class="de" style="text-align:left">${aj.map(([i,r])=>`<div style="margin-bottom:7px"><b>${WZ[i].t}</b><br>${(r.txt||'(sem comentário)').replace(/</g,'&lt;')}</div>`).join('')}</div>`
+      :'<div class="de">Nenhum ajuste marcado. Se algo não bateu, volta e marca ✏️ no passo.</div>'}
+    <p style="margin-top:10px;font-size:12.5px;color:var(--cinza)">Manda esse resumo pro Lucas (print serve) que a gente ajusta antes de programar.</p>
+    <div id="wznav"><button class="btn gho" onclick="wzI=1;wzShow()">← rever do início</button>
+      <button class="btn pri" style="margin-left:auto" onclick="wzFim()">fechar</button></div>`;
+}
+// pontinho "?" em cada bloco explicado
+WZ.forEach((s,i)=>{ if(!s.sel||!i) return; const el=wzAlvo(s.sel); if(!el||el.querySelector('.wzdot')) return;
+  if(getComputedStyle(el).position==='static') el.style.position='relative';
+  const d=document.createElement('div'); d.className='wzdot'; d.textContent='?';
+  d.title='como funciona esta parte'; d.onclick=(e)=>{e.stopPropagation();wzI=i;document.getElementById('wzmask').classList.add('on');wzShow();};
+  el.appendChild(d); });
+setTimeout(()=>{ wzIni(); },700);
+</script>
+
 </body></html>
